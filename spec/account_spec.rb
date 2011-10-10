@@ -34,6 +34,17 @@ describe Account do
     subject.deposit(deposit_amount)
     subject.withdraw(withdraw_amount)
     subject.balance.should == current_balance
-  end
+    end
+  it "Account2 should have a balance equal to current balance + transferred amount from Account1" do
+    starting_balance = 500
+    transfer_amount = 200
+    current_balance = 700
+    subject1 = Account.new(starting_balance)
+    subject2= Account.new(starting_balance)
+    subject1.transfer_to(subject2,transfer_amount)
+    subject1.balance.should == 300
+    subject2.balance.should == current_balance
+ end
+
 
 end

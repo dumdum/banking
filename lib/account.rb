@@ -1,6 +1,6 @@
 class Account
 
-  attr_reader :balance
+  attr_accessor :balance
 
   def initialize(starting_balance = 0.0)
     @balance = starting_balance
@@ -13,6 +13,10 @@ class Account
 
   def withdraw(withdraw_amount)
     @balance = @balance - withdraw_amount
+  end
+  def transfer_to(to_account,value)
+    to_account.balance += value
+    @balance -= value
   end
 
 end
