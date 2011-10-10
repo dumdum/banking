@@ -25,4 +25,15 @@ describe Account do
     subject.balance.should == starting_balance+deposit_amount
   end
 
+ it "should have a balance equal to available amount after withdrawal" do
+    starting_balance = 100
+    deposit_amount = 200
+    withdraw_amount = 200
+    current_balance = 100
+    subject = Account.new(starting_balance)
+    subject.deposit(deposit_amount)
+    subject.withdraw(withdraw_amount)
+    subject.balance.should == current_balance
+  end
+
 end

@@ -11,4 +11,8 @@ class Account
     @balance = @balance+ deposit_amount
   end
 
+  def withdraw(withdraw_amount)
+    @balance = @balance - withdraw_amount
+  end
+
 end
