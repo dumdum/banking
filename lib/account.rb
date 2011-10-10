@@ -1,14 +1,14 @@
 class Account
 
-  attr_accessor :balance
+  attr_reader :balance
 
-  def initialize(balance)
-    @balance = balance
+  def initialize(starting_balance = 0.0)
+    @balance = starting_balance
   end
 
-  def return_balance()
-    @balance
-  end
 
+  def deposit(deposit_amount)
+    @balance = @balance+ deposit_amount
+  end
 
 end
