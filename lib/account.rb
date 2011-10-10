@@ -6,5 +6,9 @@ class Account
     @balance = balance
   end
 
+  def return_balance()
+    @balance
+  end
+
 
 end
